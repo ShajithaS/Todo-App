@@ -1,0 +1,90 @@
+.landing-container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:40px;
+  gap:50px;
+  background:#f9fafb;
+}
+
+/* Left section */
+.landing-left{
+  flex:1;
+  display:flex;
+  justify-content:center;
+
+}
+
+.landing-image{
+  width:100%;
+  max-width:600px;
+  height:auto;
+  border-radius:10px;
+  
+}
+
+/* Right section */
+.landing-right{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.landing-right h1{
+  font-size:40px;
+}
+
+.landing-right p{
+  font-size:18px;
+  margin-bottom:25px;
+  color:#555;
+}
+
+/* Buttons */
+.landing-buttons{
+  display:flex;
+  gap:15px;
+}
+
+.login-btn{
+  padding:10px 20px;
+  border:none;
+  background:#3b82f6;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.register-btn{
+  padding:10px 20px;
+  border:none;
+  background:#10b981;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.login-btn:hover{
+  background:#2563eb;
+}
+
+.register-btn:hover{
+  background:#059669;
+}
+
+.landing-right img{
+    height: 80px;
+width:80px;
+border-radius: 50%;
+object-fit: contain; 
+}
+
+.landing-title{
+display:flex;
+align-items:center;
+justify-items: center;
+gap:15px;
+}
+

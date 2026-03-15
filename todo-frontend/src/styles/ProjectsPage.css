@@ -1,0 +1,76 @@
+/* Page Container */
+.projects-container{
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Heading */
+.projects-container h2{
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #1f2937;
+}
+
+/* Input Section */
+.project-input{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.project-input input{
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.project-input input:focus{
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* Add Project Button */
+.project-input button{
+  padding: 10px 18px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.project-input button:hover{
+  background: #2563eb;
+}
+
+/* Project Grid */
+.project-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Project Card */
+.project-card{
+  padding: 25px;
+  background: #95beff;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #374151;
+  transition: 0.2s;
+}
+
+/* Hover effect */
+.project-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  border-color: #3b82f6;
+}

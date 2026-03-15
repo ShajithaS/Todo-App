@@ -1,0 +1,120 @@
+.login-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Left side styling */
+.login-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+.auth-illustration {
+  max-width: 80%;
+  height: auto;
+  border-radius:10px;
+}
+
+/* Right side blue background */
+.login-right {
+  flex: 1.2;
+  background-color: #007bff; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating White Card */
+.auth-card {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+  
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
+.auth-card h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Form Inputs */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 30px; /* Highly rounded as per image */
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.auth-form input:focus {
+  border-color: #007bff;
+}
+
+/* Blue Login Button */
+.login-submit-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Footer Links */
+.auth-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.auth-footer a {
+  color: #666;
+  text-decoration: none;
+}
+
+.auth-footer p {
+    margin-top: 10px;
+}
+
+.auth-footer p a {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Mobile Responsive */
+@media (max-width: 850px) {
+  .login-left {
+    display: none; /* Hide illustration on mobile */
+  }
+}
