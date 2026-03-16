@@ -248,6 +248,38 @@ http://localhost:3000
 
 ---
 
+## API Documentation - Swagger UI
+
+This project uses **Springdoc OpenAPI** to generate Swagger UI for API documentation.
+
+### Accessing Swagger UI
+
+1. Make sure the backend server is running:
+
+```bash
+cd backend
+mvn spring-boot:run
+```
+
+2. Open your browser and go to:
+http://localhost:9092/swagger-ui/index.html
+
+3. You will see a visual interface of all the available APIs:
+
+Authentication APIs (/auth/**)
+
+Project APIs (/projects/**)
+
+Task APIs (/projects/{projectId}/tasks/**)
+
+4. You can try out the APIs directly from Swagger UI:
+
+Click on any endpoint
+
+Fill in the required fields
+
+Press "Execute" to see live responses from the backend
+
 # Application Flow
 
 1. User registers an account.
