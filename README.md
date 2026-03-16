@@ -266,19 +266,19 @@ http://localhost:9092/swagger-ui/index.html
 
 3. You will see a visual interface of all the available APIs:
 
-Authentication APIs (/auth/**)
+- Authentication APIs (/auth/**)
 
-Project APIs (/projects/**)
+- Project APIs (/projects/**)
 
-Task APIs (/projects/{projectId}/tasks/**)
+- Task APIs (/projects/{projectId}/tasks/**)
 
 4. You can try out the APIs directly from Swagger UI:
 
-Click on any endpoint
+- Click on any endpoint
 
-Fill in the required fields
+- Fill in the required fields
 
-Press "Execute" to see live responses from the backend
+- Press "Execute" to see live responses from the backend
 
 # Application Flow
 
