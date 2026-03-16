@@ -31,7 +31,7 @@ function RegisterPage() {
 
     } catch (error) {
 
-      alert("Registration failed");
+      alert(error.response?.data || "Registration failed");
 
     }
   };

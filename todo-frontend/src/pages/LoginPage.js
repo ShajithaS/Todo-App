@@ -29,7 +29,7 @@ function LoginPage() {
 
     } catch (error) {
 
-      alert("Invalid username or password");
+      alert(error.response?.data || "Invalid username or password");
 
     }
   };

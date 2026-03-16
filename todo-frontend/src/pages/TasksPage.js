@@ -103,7 +103,7 @@ function TasksPage() {
       <div className="task-list">
 
   {tasks.length === 0 ? (
-    <p className="no-tasks">Create your first task</p>
+    <p className="no-tasks">📝 Create your first task</p>
   ) : (
     tasks.map((task) => (
       <div key={task.id} className="task-item">
