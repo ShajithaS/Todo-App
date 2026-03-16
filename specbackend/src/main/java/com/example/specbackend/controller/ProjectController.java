@@ -23,7 +23,7 @@ public class ProjectController {
     public Project createProject(@PathVariable Long userId,
                                  @RequestBody Project project){
 
-        User user = userRepository.findById(userId).orElseThrow();
+        User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
 
         project.setUser(user);
 

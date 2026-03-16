@@ -6,6 +6,7 @@ import com.example.specbackend.model.User;
 import com.example.specbackend.service.AuthService;
 import com.example.specbackend.service.AuthServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,13 +17,24 @@ public class AuthController {
     private AuthServiceImpl authService;
 
     @PostMapping("/register")
-    public User register(@RequestBody RegisterRequest registerRequest){
+    public ResponseEntity<?> register(@RequestBody RegisterRequest registerRequest){
 
-        return authService.register(registerRequest);
+        try {
+            User user = authService.register(registerRequest);
+            return ResponseEntity.ok(user);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @PostMapping("/login")
-    public User login(@RequestBody LoginRequest request){
-        return authService.login(request);
+    public ResponseEntity<?> login(@RequestBody LoginRequest request){
+
+        try {
+            User user = authService.login(request);
+            return ResponseEntity.ok(user);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }

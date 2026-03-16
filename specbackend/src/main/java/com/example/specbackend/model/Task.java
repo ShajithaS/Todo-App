@@ -1,5 +1,6 @@
 package com.example.specbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,6 +18,7 @@ public class Task {
 
     @ManyToOne
     @JoinColumn(name="project_id")
+    @JsonIgnore
     private Project project;
 
     public Task(){

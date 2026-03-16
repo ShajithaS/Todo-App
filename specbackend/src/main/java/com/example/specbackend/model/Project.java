@@ -1,5 +1,6 @@
 package com.example.specbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 @Table(name="projects")
@@ -16,6 +17,7 @@ public class Project
 
     @ManyToOne
     @JoinColumn(name="user_id")
+    @JsonIgnore
     private User user;
 
     public Project(){}
