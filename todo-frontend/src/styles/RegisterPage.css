@@ -27,8 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
+  
 }
 
 /* Floating White Card */
@@ -36,7 +35,6 @@
   background: white;
   padding: 50px 40px;
   border-radius: 20px;
-  
   width: 100%;
   max-width: 400px;
   text-align: left;
@@ -64,7 +62,7 @@
   width: 100%;
   padding: 15px;
   border: 1px solid #ddd;
-  border-radius: 30px; /* Highly rounded as per image */
+  border-radius: 30px; 
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s;
@@ -96,15 +94,6 @@
   margin-top: 20px;
   text-align: center;
   font-size: 0.9rem;
-}
-
-.auth-footer a {
-  color: #666;
-  text-decoration: none;
-}
-
-.auth-footer p {
-    margin-top: 10px;
 }
 
 .auth-footer p a {

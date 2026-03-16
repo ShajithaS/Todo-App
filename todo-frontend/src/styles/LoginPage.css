@@ -27,8 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
+  
 }
 
 /* Floating White Card */
@@ -64,7 +63,7 @@
   width: 100%;
   padding: 15px;
   border: 1px solid #ddd;
-  border-radius: 30px; /* Highly rounded as per image */
+  border-radius: 30px; 
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s;
@@ -96,15 +95,6 @@
   margin-top: 20px;
   text-align: center;
   font-size: 0.9rem;
-}
-
-.auth-footer a {
-  color: #666;
-  text-decoration: none;
-}
-
-.auth-footer p {
-    margin-top: 10px;
 }
 
 .auth-footer p a {

@@ -10,6 +10,7 @@ function ProjectsPage() {
 
   const [projects, setProjects] = useState([]);
   const [title, setTitle] = useState("");
+   const [error, setError] = useState("");
 
   const userId = localStorage.getItem("userId");
 
@@ -39,7 +40,11 @@ function ProjectsPage() {
   const handleCreateProject = async (e) => {
 
     e.preventDefault();
-
+    if (!title.trim()) {
+      setError("Project name is required");
+      return;
+    }
+    setError("");
     try {
 
       await createProject(userId, {
@@ -47,6 +52,7 @@ function ProjectsPage() {
       });
 
       setTitle("");
+      
 
       fetchProjects();
 
@@ -74,10 +80,13 @@ function ProjectsPage() {
           type="text"
           placeholder="New Project Name"
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
+          onChange={(e) => {setTitle(e.target.value);
+            if (error) setError("");
+          }}
+          
+          className={error ? "error-input" : ""}
         />
-
+        {error && <p className="error-message">{error}</p>}
         <button type="submit">
           Add Project
         </button>
