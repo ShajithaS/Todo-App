@@ -1,36 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getProjects , createProject } from "../services/projectService";
+import { getProjects, createProject } from "../services/projectService";
 import Navbar from "../components/Navbar";
 import "../styles/ProjectsPage.css";
 
 function ProjectsPage() {
-
   const navigate = useNavigate();
 
   const [projects, setProjects] = useState([]);
   const [title, setTitle] = useState("");
-   const [error, setError] = useState("");
+  const [error, setError] = useState("");
 
   const userId = localStorage.getItem("userId");
 
   // Fetch projects
   const fetchProjects = async () => {
-
     try {
-
       const response = await getProjects(userId);
 
       setProjects(response.data);
-
     } catch (error) {
       console.error("Error fetching projects");
     }
-
   };
 
   useEffect(() => {
-    if(!userId) {
+    if (!userId) {
       navigate("/login");
     }
     fetchProjects();
@@ -38,7 +33,6 @@ function ProjectsPage() {
 
   // Create project
   const handleCreateProject = async (e) => {
-
     e.preventDefault();
     if (!title.trim()) {
       setError("Project name is required");
@@ -46,78 +40,58 @@ function ProjectsPage() {
     }
     setError("");
     try {
-
       await createProject(userId, {
-        name: title
+        name: title,
       });
-
       setTitle("");
-      
-
       fetchProjects();
-
     } catch (error) {
       console.error("Error creating project");
     }
-
   };
 
   return (
-<>
-  <Navbar />
-    <div className="projects-container">
+    <>
+      <Navbar />
+      <div className="projects-container">
+        <h2>My Projects</h2>
 
-      <h2>My Projects</h2>
+        {/* Add Project */}
 
-      {/* Add Project */}
+        <form onSubmit={handleCreateProject} className="project-input">
+          <input
+            type="text"
+            placeholder="New Project Name"
+            value={title}
+            onChange={(e) => {
+              setTitle(e.target.value);
+              if (error) setError("");
+            }}
+            className={error ? "error-input" : ""}
+          />
+          {error && <p className="error-message">{error}</p>}
+          <button type="submit">Add Project</button>
+        </form>
 
-      <form
-        onSubmit={handleCreateProject}
-        className="project-input"
-      >
+        {/* Project List */}
 
-        <input
-          type="text"
-          placeholder="New Project Name"
-          value={title}
-          onChange={(e) => {setTitle(e.target.value);
-            if (error) setError("");
-          }}
-          
-          className={error ? "error-input" : ""}
-        />
-        {error && <p className="error-message">{error}</p>}
-        <button type="submit">
-          Add Project
-        </button>
-
-      </form>
-
-      {/* Project List */}
-
-      <div className="project-list">
-
-        {projects.map((project) => (
-
-          <div
-            key={project.id}
-            className="project-card"
-            onClick={() =>
-              navigate(`/projects/${project.id}/tasks`)
-            }
-          >
-
-            {project.name}
-
-          </div>
-
-        ))}
-
+        <div className="project-list">
+          {projects.length === 0 ? (
+            <p className="no-projects">Create your first project!</p>
+          ) : (
+            projects.map((project) => (
+              <div
+                key={project.id}
+                className="project-card"
+                onClick={() => navigate(`/projects/${project.id}/tasks`)}
+              >
+                {project.name}
+              </div>
+            ))
+          )}
+        </div>
       </div>
-
-    </div>
     </>
-
   );
 }
 

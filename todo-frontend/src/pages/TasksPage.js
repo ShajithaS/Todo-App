@@ -101,32 +101,38 @@ function TasksPage() {
       {/* Task List */}
 
       <div className="task-list">
-        {tasks.map((task) => (
-          <div key={task.id} className="task-item">
-            <input
-              type="checkbox"
-              checked={task.completed}
-              onChange={() => handleToggle(task.id)}
-            />
 
-            <span
-              className={task.completed ? "task-title completed" : "task-title"}
-            >
-              {task.title}
-            </span>
+  {tasks.length === 0 ? (
+    <p className="no-tasks">Create your first task</p>
+  ) : (
+    tasks.map((task) => (
+      <div key={task.id} className="task-item">
+        <input
+          type="checkbox"
+          checked={task.completed}
+          onChange={() => handleToggle(task.id)}
+        />
 
-            <button
-              className="delete-btn"
-              onClick={() => {
-                setTaskToDelete(task.id);
-                setShowPopup(true);
-              }}
-            >
-              Delete
-            </button>
-          </div>
-        ))}
+        <span
+          className={task.completed ? "task-title completed" : "task-title"}
+        >
+          {task.title}
+        </span>
+
+        <button
+          className="delete-btn"
+          onClick={() => {
+            setTaskToDelete(task.id);
+            setShowPopup(true);
+          }}
+        >
+          Delete
+        </button>
       </div>
+    ))
+  )}
+
+</div>
       {showPopup && (
   <div className="popup-overlay">
     <div className="popup-box">

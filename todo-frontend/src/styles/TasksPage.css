@@ -169,3 +169,10 @@
 .confirm-delete-btn:hover{
   background:#dc2626;
 }
+
+.no-tasks{
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
+  font-size: 16px;
+}
